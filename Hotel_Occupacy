@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main(){
+
+        int floors=0, rooms=0,unoccupied=0, i = 0, addRoom=0, addOccupied =0;
+        float occupationrate =0.0, occupied = 0.0;
+        cout<<"How many floors are there?| ";
+        cin>>floors;
+        while(i<floors + 1){
+            cout<<"How many rooms are on floor "<<i<<"?| ";
+            cin>>addRoom;
+            cout<<"And how many of them are occupied?| ";
+            cin>>addOccupied;
+            if(addOccupied > addRoom){
+                cout<<"Impossible!";
+                return 0;
+            }
+            rooms += addRoom;
+            occupied += addOccupied;
+            unoccupied = rooms - occupied;
+            i++;
+        }
+        occupationrate = (occupied / rooms) * 100;
+        cout<<"The hotel has "<<rooms<<" rooms\n";
+        cout<<occupied<<" of those rooms are occupied\n";
+        cout<<"and "<<unoccupied<<" are unoccupied\n";
+        cout<<"Occupation rate is at " << occupationrate <<"%";
+}
