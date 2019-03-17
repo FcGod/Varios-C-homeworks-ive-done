@@ -26,7 +26,7 @@ using namespace std;
 
 	}
 }
-		//High low sorting
+		//High low sorting. Pos = pos where you sort.
 	void bubbleSortHL(int array[], int Pos){
 		bool sortedHL = false;
 		while(sortedHL == false){
@@ -52,6 +52,7 @@ using namespace std;
 
 	int main(int argc, char *argv[]) {
 
+	//P means from where do you want to start the reverse sorting. :)
 	int p = 0;
 	cout<<"Give p";
 	cin>>p;
