@@ -9,12 +9,12 @@ using namespace std;
 	//LH - Low - High sorting
 	void bubbleSortLH(int array[]){
 	bool sortedLH = false;
-	
+
 	while(sortedLH == false){
-		
-		
+
+
 		sortedLH=true;
-		
+
 		for(i=0;i<9;++i){
 			if(array[i]>array[i+1]){
 				temp=array[i];
@@ -23,16 +23,16 @@ using namespace std;
 				sortedLH=false;
 			}
 		}
-	
+
 	}
 }
 		//High low sorting
-	void bubbleSortHL(int array[]){
+	void bubbleSortHL(int array[], int Pos){
 		bool sortedHL = false;
 		while(sortedHL == false){
 			sortedHL = true;
-			
-			for(i=0;i<9;++i){
+
+			for(i=Pos;i<9;++i){
 				if(array[i]<array[i+1]){
 					temp=array[i];
 					array[i]=array[i+1];
@@ -40,10 +40,10 @@ using namespace std;
 					sortedHL=false;
 				}
 			}
-			
-			
-			
-		}	
+
+
+
+		}
 	}
 
 
@@ -51,19 +51,20 @@ using namespace std;
 
 
 	int main(int argc, char *argv[]) {
-		
+
 	int p = 0;
 	cout<<"Give p";
-	cin>>p;	
-	for(i = 0; i)
-	
-			
+	cin>>p;
 
-	
+	bubbleSortLH(array);
+	bubbleSortHL(array,p);
+
+
+
 	//see array
 	for(int i=0;i<10;++i){
 		cout<<array[i]<<" ";
 	}
-	
-	
+
+
 }
