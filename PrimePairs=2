@@ -1,0 +1,74 @@
+#include <iostream>
+
+using namespace std;
+int main(int argc, char *argv[]) {
+	
+	int n,n2, i;
+	bool isPrime = true, isPrime2 = true, Sum2 = false, goON=true;
+
+	cout << "Enter from where to start";
+	cin >> n;
+	n2 = n+2;
+	
+	//Father loop - keeps running the entire thing running till it finds the pair
+	while(Sum2 == false){
+		
+		
+	//While Loop to find the next pair of primes starting from 1 
+	while(goON == true){
+		
+	//checks if n is prime		
+	for(i = 2; i <= n / 2; ++i)
+	{
+			if(n % i == 0)
+			{
+					isPrime = false;
+					break;
+			}	
+	}	
+		
+		//After finding a prime it stops the loop ELSE it goes to n+1 and continues till prime is found	
+		if(isPrime){
+			goON = false;
+			break;
+			}else{
+			goON = true;
+			n++;
+			}	
+}
+					
+					
+					
+					
+	//Find is prime + 2 is still prime	
+	if(isPrime){
+		for(i = 2; i <= n2/2; i++){
+			if(n % i == 0){
+				isPrime2 = false;
+				break;			
+			}
+		}
+			//Check is (Prime + 2) - Prime  = 2; (here for reasons)
+			if(isPrime2){
+				if(n2 - n == 2){
+					Sum2 = true;
+				}else {
+					Sum2 = false;
+				}
+			}
+		}
+		
+	
+
+
+		//if prime+2 - prime = 2 then yeeeeee
+	if(Sum2){
+		cout<<"ehe yeah boy";
+		cout<<n<<n2;
+	}
+	
+}
+	
+	
+	return 0;
+}
